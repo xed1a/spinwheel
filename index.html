@@ -11,48 +11,59 @@
     <div class="spinBtn">Spin</div>
 
     <div class="wheel">
-        <div class="number" style="--i:1; --clr: #db7093;">
+        <div class="number" style="--i:1; --clr: #db7093; transform: rotate(calc(var(--i) * 30deg));">
             <span>Rating your dick</span>
         </div>
-        <div class="number" style="--i:2; --clr: #20b2aa;">
+        <div class="number" style="--i:2; --clr: #20b2aa; transform: rotate(calc(var(--i) * 30deg));">
             <span>BJ video</span>
         </div>
-        <div class="number" style="--i:3; --clr: #d63e92;">
+        <div class="number" style="--i:3; --clr: #d63e92; transform: rotate(calc(var(--i) * 30deg));">
             <span>Personal greeting</span>
         </div>
-        <div class="number" style="--i:4; --clr: #daa520;">
+        <div class="number" style="--i:4; --clr: #daa520; transform: rotate(calc(var(--i) * 30deg));">
             <span>10 sexy pics</span>
         </div>
-        <div class="number" style="--i:5; --clr: #ff340f;">
+        <div class="number" style="--i:5; --clr: #ff340f; transform: rotate(calc(var(--i) * 30deg));">
             <span>5 hot videos</span>
         </div>
-        <div class="number" style="--i:6; --clr: #ff7f50;">
+        <div class="number" style="--i:6; --clr: #ff7f50; transform: rotate(calc(var(--i) * 30deg));">
             <span>Audio with moans</span>
         </div>
-        <div class="number" style="--i:7; --clr: #3cb371;">
+        <div class="number" style="--i:7; --clr: #3cb371; transform: rotate(calc(var(--i) * 30deg));">
             <span>Mystery box</span>
         </div>
-        <div class="number" style="--i:8; --clr: #4169e1;">
+        <div class="number" style="--i:8; --clr: #4169e1; transform: rotate(calc(var(--i) * 30deg));">
             <span>50$ bundle</span>
         </div>
-
-        <div class="number" style="--i:5; --clr: #93f562;">
+        <div class="number" style="--i:9; --clr: #93f562; transform: rotate(calc(var(--i) * 30deg));">
             <span>Live surprise</span>
         </div>
-        <div class="number" style="--i:6; --clr: #aa50ff;">
+        <div class="number" style="--i:10; --clr: #aa50ff; transform: rotate(calc(var(--i) * 30deg));">
             <span>100$ bundle</span>
         </div>
-        <div class="number" style="--i:7; --clr: #b33cb1;">
+        <div class="number" style="--i:11; --clr: #b33cb1; transform: rotate(calc(var(--i) * 30deg));">
             <span>Live pic</span>
         </div>
-        <div class="number" style="--i:8; --clr: #ff001d;">
+        <div class="number" style="--i:12; --clr: #ff001d; transform: rotate(calc(var(--i) * 30deg));">
             <span>Strip video</span>
         </div>
     </div>
-    <div class="result" id="result">Last prize won: <span id="prizeDisplay">None</span></div>
-
 </div>
 </body>
 
-<script src="script.js"></script>
+<script>
+    let wheel = document.querySelector('.wheel');
+    let spinBtn = document.querySelector('.spinBtn');
+    let value = Math.ceil(Math.random() * 3600);
+
+    spinBtn.onclick = function() {
+        wheel.style.transform = "rotate(" + value + "deg)";
+        value += Math.ceil(Math.random() * 3600);
+
+        spinBtn.onclick = null;
+    };
+
+
+
+</script>
 </html>
